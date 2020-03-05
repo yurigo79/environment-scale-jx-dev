@@ -1,0 +1,10 @@
+adminUser:
+  password: local:scale-jx/adminUser:password
+  username: admin
+enableDocker: false
+pipelineUser:
+  email: goikhman.yuri@gmail.com
+  token: local:scale-jx/pipelineUser:token
+  username: yurigo79
+prow:
+  hmacToken: local:scale-jx/prow:hmacToken
