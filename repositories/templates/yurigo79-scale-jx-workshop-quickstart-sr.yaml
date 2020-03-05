@@ -1,0 +1,21 @@
+apiVersion: jenkins.io/v1
+kind: SourceRepository
+metadata:
+  creationTimestamp: null
+  labels:
+    owner: yurigo79
+    provider: github
+    repository: scale-jx-workshop-quickstart
+  name: yurigo79-scale-jx-workshop-quickstart
+spec:
+  description: Imported application for yurigo79/scale-jx-workshop-quickstart
+  httpCloneURL: https://github.com/yurigo79/scale-jx-workshop-quickstart.git
+  org: yurigo79
+  provider: https://github.com
+  providerKind: github
+  providerName: github
+  repo: scale-jx-workshop-quickstart
+  scheduler:
+    kind: ""
+    name: ""
+  url: https://github.com/yurigo79/scale-jx-workshop-quickstart.git

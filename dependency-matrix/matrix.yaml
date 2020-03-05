@@ -1,0 +1,7 @@
+dependencies:
+- host: github.com
+  owner: yurigo79
+  repo: scale-jx-workshop-quickstart
+  url: https://github.com/yurigo79/scale-jx-workshop-quickstart.git
+  version: ""
+  versionURL: ""
