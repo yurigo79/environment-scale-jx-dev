@@ -5,3 +5,9 @@ dependencies:
   url: https://github.com/yurigo79/scale-jx-workshop-quickstart.git
   version: ""
   versionURL: ""
+- host: github.com
+  owner: yurigo79
+  repo: skiapp
+  url: https://github.com/yurigo79/skiapp.git
+  version: ""
+  versionURL: ""
