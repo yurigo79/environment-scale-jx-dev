@@ -1,0 +1,21 @@
+apiVersion: jenkins.io/v1
+kind: SourceRepository
+metadata:
+  creationTimestamp: null
+  labels:
+    owner: yurigo79
+    provider: github
+    repository: skiapp
+  name: yurigo79-skiapp
+spec:
+  description: Imported application for yurigo79/skiapp
+  httpCloneURL: https://github.com/yurigo79/skiapp.git
+  org: yurigo79
+  provider: https://github.com
+  providerKind: github
+  providerName: github
+  repo: skiapp
+  scheduler:
+    kind: ""
+    name: ""
+  url: https://github.com/yurigo79/skiapp.git
