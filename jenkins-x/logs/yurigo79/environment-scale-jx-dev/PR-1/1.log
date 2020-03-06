@@ -1,0 +1,72 @@
+
+Showing logs for build [32myurigo79-environment-scale-jx-d-hgfzc-1[0m stage [32mpr-checks[0m and container [32mstep-credential-initializer-lp9jm[0m
+{"level":"warn","ts":1583452824.92049,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/0.8.0-**-support-backwards-incompats\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1583452824.9212556,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+
+Showing logs for build [32myurigo79-environment-scale-jx-d-hgfzc-1[0m stage [32mpr-checks[0m and container [32mstep-working-dir-initializer-qvrr8[0m
+{"level":"warn","ts":1583452826.7404106,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1583452826.7442734,"logger":"fallback-logger","caller":"bash/main.go:64","msg":"Successfully executed command \"sh -c mkdir -p /workspace/source\"; output "}
+
+Showing logs for build [32myurigo79-environment-scale-jx-d-hgfzc-1[0m stage [32mpr-checks[0m and container [32mstep-place-tools[0m
+
+Showing logs for build [32myurigo79-environment-scale-jx-d-hgfzc-1[0m stage [32mpr-checks[0m and container [32mstep-git-source-yurigo79-environment-scale-jx-d-hgfzc-ttzb5[0m
+{"level":"warn","ts":1583452924.1572204,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/0.8.0-**-support-backwards-incompats\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1583452924.8970048,"logger":"fallback-logger","caller":"git/git.go:103","msg":"Successfully cloned https://github.com/********/environment-scale-**-dev.git @ master in path /workspace/source"}
+
+Showing logs for build [32myurigo79-environment-scale-jx-d-hgfzc-1[0m stage [32mpr-checks[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:3e008c260bb0e584e847525e118456dd7416aa1f,1:d05c14080a0d6975b3080b0bb28eb3ffb90eebc1
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git fetch origin --unshallow d05c14080a0d6975b3080b0bb28eb3ffb90eebc1: 3e008c260bb0e584e847525e118456dd7416aa1f:
+DEBUG: ran git fetch --unshallow origin d05c14080a0d6975b3080b0bb28eb3ffb90eebc1: 3e008c260bb0e584e847525e118456dd7416aa1f: in 
+DEBUG: JX_LOG_LEVEL=error LC_ALL=C git branch
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git checkout master
+DEBUG: ran git checkout master in 
+DEBUG: JX_LOG_LEVEL=error LC_ALL=C git reset --hard 3e008c260bb0e584e847525e118456dd7416aa1f
+DEBUG: ran git reset --hard 3e008c260bb0e584e847525e118456dd7416aa1f in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git clean -fd .
+DEBUG: ran clean --force -d . in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git merge d05c14080a0d6975b3080b0bb28eb3ffb90eebc1
+DEBUG: ran git merge d05c14080a0d6975b3080b0bb28eb3ffb90eebc1 in 
+DEBUG: JX_LOG_LEVEL=error LC_ALL=C git log --format=%H%x1f%an%x1f%ae%x1f%cn%x1f%ce%x1f%s%n%b%x1e 3e008c260bb0e584e847525e118456dd7416aa1f..HEAD
+Merged SHA d05c14080a0d6975b3080b0bb28eb3ffb90eebc1 with commit message 'chore(deps): bump https://github.com/********/scale-**-workshop-quickstart.git' into base branch master
+
+Showing logs for build [32myurigo79-environment-scale-jx-d-hgfzc-1[0m stage [32mpr-checks[0m and container [32mstep-verify-parameters[0m
+
+Showing logs for build [32myurigo79-environment-scale-jx-d-hgfzc-1[0m stage [32mpr-checks[0m and container [32mstep-lint-env-helm[0m
+rm -rf charts
+rm -rf requirements.lock
+helm init --client-only
+Creating /builder/home/.helm 
+Creating /builder/home/.helm/repository 
+Creating /builder/home/.helm/repository/cache 
+Creating /builder/home/.helm/repository/local 
+Creating /builder/home/.helm/plugins 
+Creating /builder/home/.helm/starters 
+Creating /builder/home/.helm/cache/archive 
+Creating /builder/home/.helm/repository/repositories.yaml 
+Adding stable repo with URL: https://kubernetes-charts.storage.googleapis.com 
+Adding local repo with URL: http://127.0.0.1:8879/charts 
+$HELM_HOME has been configured at /builder/home/.helm.
+Not installing Tiller due to 'client-only' flag having been set
+helm repo add jenkins-x https://storage.googleapis.com/chartmuseum.jenkins-x.io
+"jenkins-x" has been added to your repositories
+helm repo add bitnami https://charts.bitnami.com/bitnami
+"bitnami" has been added to your repositories
+helm repo add stable https://kubernetes-charts.storage.googleapis.com
+"stable" has been added to your repositories
+** step helm build --boot --provider-values-dir=../kubeProviders
+WARNING: could not find a git repository in the directory .: No git conf dir found
+Ignoring templates/.gitignore
+Applying the kubernetes overrides at ../kubeProviders/gke/values.tmpl.yaml
+Verifying the helm requirements versions in dir: . using version stream URL: https://github.com/jenkins-x/jenkins-x-versions.git and git ref: v1.0.378
+Wrote chart values.yaml values.yaml generated from directory tree
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Adding missing Helm repo: jenkins-x-chartmuseum http://jenkins-x-chartmuseum:8080
+Successfully added Helm repository jenkins-x-chartmuseum.
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Adding missing Helm repo: chartmuseum.jenkins-x.io http://chartmuseum.jenkins-x.io
+Successfully added Helm repository chartmuseum.jenkins-x.io.
+helm lint .
+==> Linting .
+Lint OK
+
+1 chart(s) linted, no failures
